@@ -1,0 +1,29 @@
+server:
+  port: 8094
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: 192.168.27.212
+  rabbitmq:
+    host: 192.168.27.212
+    virtual-host: /root
+    username: root
+    password: root
+
+auth:
+  jwt:
+    publicKeyPath: E:\\JavaEESoftware\\GmallNew\\gmall-jwt-key\\rsa.pub
+    cookieName: GMALL_TOKEN
+alipay:
+  app_id: 2016101600697690
+  merchant_private_key: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCHgKnDF1n6Nd4E6bhJ9ig9++ikcfEBIkTDTklb1KggUHVW5GhHz8gEx3q/E+Ae+G6NtJZ8pCIiT1qtozmo+oCgz/gbKnQYSI9cs2spq0TLAEx9itjyOUb4cr1BQ603XkAwuEuYs43lz4y68REyXhxcoj/APyZDJi2n7wUqMP/8VKnRfCUwaeuxjE8HmJ0+1dalylt6AhhDymnlViFWa/NR3A8g7H6GQl4mhEwl5mCpY7jmBGeBlyKONJ9BmNzj29R06QTUgeA0fdy22tpIPYD5S73khX916hgrvxXV2Q6WsfXYa4+tR+zlxbheYeWv8RPU7NUAShnAfrbSQ5NQ6s5LAgMBAAECggEAF+lXi8raIPJSjJFl6P9cWJvUkPhebDHM6p4tCdx8Er/ABSZnVIzRIi7FdWSffzed4rnEeJhKQb25Jb0RFsWl3zrz8G9Mb2CWk+hBd+f2StBxrxHKeOwsnvk4doTn00Z5k19iT78Xwj8e+XpC65156crj7xv1t5HMKr9eLPTap39SyUHqGHieaeLZMKUkYbkdmvpNj6e4ML2XVNAE6KyqQkBW8GsXG2KAKIIisZoxkLYmCLsLKCxh2Q0eMh7K9ZfXGW5FgFxgRm0e/tRbG+U5LpYziOwLzhlsqCRQKJYEv/Yi4DI/y3X7kaBkgjIfPBP0/x4S0gpMmDfqh5l6sfBVgQKBgQDX1bcgzbuZVHf9WC3Da9/7lgVZiSB+XhAKjXkiy1LewYrEyuMFXrZ28la/xbsxsbvCJY8m+LQBnZxfooBQ932wZhnIzvY3KDI5otlFvB9n57+VgmVHoySDbsEjhjy/OWkwnZbBG7NmCD1+NN3yikO2mZlO/sw6vb9AVVRSk6GCwQKBgQCgt/PIO+10mK9mhrPPSlmA7Di4rCpouUMaeE535fmEJuTSKpsjFIS4GUbHVDfGZnOvUoe3PnRzDcrjwLhow2BzJJU32JzYgu8wU9aBZPO6duu3EVFG5QGvWuMRK6LVJ0DfHwxS1hK420ZvzmQFP/K2v0D5nkx44xUclVP2y/YwCwKBgQDC/qExMM3BDDBPoX/O40H7oSD6MEo8AK1La186kSkwePjvLEGIU3ZT5kN7hJ/HmMSB9b7sPZsbLpLdUAnPnJlgag33fwuw707ZBYh4WSqijBxpbeIko37Ug5ZYiumM9chUFLvjgSxGDUHJKOgwPLxKV2DLnqVSmKUV8UF6TUiIwQKBgG1kyEpCgB4cz0a56SnvMXzPTMxmY3dkoogh20dBAdUxpA5pca8vCCdHDSYf7NbeZV+wjS/tEtY9TRw40Ux9r+ivveGFTz0P4j7C0f7A+CSzTT4OS4Q13C+/bU8CpJLxZPZ566l2jMfGeOshUHNCU7KP+2nslaCy8GvEOKKDsc6BAoGBANNDupZyld9tJt+EHrppnperaOgtcNCtY3QHbPWEowwdqMNEEdXxT0yTLQ0swk/VhbcSPj9pw6bmUY9ARo6MbUzf3jO/OsIIJv/xH6dWb409EfUKfzVLSr42ATEhmveU8nziUJ5PNvFScJsm5Hf3OM414TRt4/gn12x8d31oRvwc
+  alipay_public_key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmk6ROxOK6OcedcTpXQ5RX+Bt3ueWKDGtkRc/NLyqNos8IlJb2EBhHOKPwRDRIivL5dCqQ8AiEQmndn8+6MbYC9j42t8EhDKhOPPlA6H3Ygs9DC+9n8lTIFC475F3p8GRANwhSIpOOPOU3nQCNFLSWELjl6ArxbxHNI+PllxCBVKO+P9hsTcR/W402EydBSlUPrNAFaEQlahnGCkuO0kxCrtPNDygZH3tE/H8yk93HCLOUM+cRS1UjImmHpXAx9bk4kDxrAYQ0O3dLGDQnocygc1ClkytsL7X5Cb4aZnvSVI/NoDS1T3YowDZlO+5ZdFOqGiXtjKcI/orc1cE5mTnbwIDAQAB
+  notify_url: http://aifeifei.utools.club/order/pay/success
+  return_url: http://aifeifei.utools.club/order/pay/success
+  gatewayUrl: https://openapi.alipaydev.com/gateway.do
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000

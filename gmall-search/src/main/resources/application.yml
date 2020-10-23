@@ -1,0 +1,18 @@
+server:
+  port: 8086
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  elasticsearch:
+    rest:
+      uris: http://192.168.27.212:9200
+  rabbitmq:
+    virtual-host: /root
+    host: 192.168.27.212
+    username: root
+    password: root
+  #数据为null 将不会返回
+  jackson:
+    default-property-inclusion: non_null

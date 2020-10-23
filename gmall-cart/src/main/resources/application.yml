@@ -1,0 +1,21 @@
+server:
+  port: 8095
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: 192.168.27.212
+  rabbitmq:
+    host: 192.168.27.212
+    virtual-host: /root
+    username: root
+    password: root
+
+auth:
+  jwt:
+    publicKeyPath: E:\\JavaEESoftware\\GmallNew\\gmall-jwt-key\\rsa.pub
+    cookieName: GMALL_TOKEN
+    userKeyName: USER_KEY
+    expireTime: 2592000

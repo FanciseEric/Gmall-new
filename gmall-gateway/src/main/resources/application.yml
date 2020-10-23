@@ -1,0 +1,64 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.27.1:8848
+    gateway:
+      routes:
+        - id: pms-route
+          uri: lb://pms-service
+          #断言
+          predicates:
+            - Path=/pms/**
+#          filters:
+#            - Auth
+        - id: sms-route
+          uri: lb://sms-service
+          #断言
+          predicates:
+            - Path=/sms/**
+        - id: wms-route
+          uri: lb://wms-service
+          #断言
+          predicates:
+            - Path=/wms/**
+        - id: oms-route
+          uri: lb://oms-service
+          #断言
+          predicates:
+            - Path=/oms/**
+        - id: ums-route
+          uri: lb://ums-service
+          #断言
+          predicates:
+            - Path=/ums/**
+        - id: index-route
+          uri: lb://index-service
+          #断言
+          predicates:
+            - Path=/api/index/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+        - id: auth-route
+          uri: lb://auth-service
+          #断言
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*), $\{segment}
+        - id: cart-route
+          uri: lb://cart-service
+          #断言
+          predicates:
+            - Path=/cart/**
+        - id: order-route
+          uri: lb://order-service
+          #断言
+          predicates:
+            - Path=/order/**
+auth:
+  jwt:
+    publicKeyPath: E:\\JavaEESoftware\\GmallNew\\gmall-jwt-key\\rsa.pub
+    cookieName: GMALL_TOKEN

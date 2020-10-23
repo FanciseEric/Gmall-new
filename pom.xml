@@ -9,7 +9,7 @@
     <description>谷粒商城</description>
     <packaging>pom</packaging>
 
-	
+	<!--聚合-->
     <modules>
         <module>gmall-core</module>
         <module>gmall-admin</module>
